@@ -1,0 +1,264 @@
+:root {
+  --clr-tomato: hsl(4, 100%, 67%);
+  --clr-dark-slate-grey: hsl(234, 29%, 20%);
+  --clr-charcoal-grey: hsl(235, 18%, 26%);
+  --clr-grey: hsl(231, 7%, 60%);
+  --clr-white: hsl(0, 0%, 100%);
+}
+
+*,
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  height: 100vh;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: var(--clr-charcoal-grey);
+  background-color: var(--clr-dark-slate-grey);
+  font-weight: 400;
+}
+
+.container {
+  margin: auto;
+  height: 100%;
+  width: 100%;
+  background: transparent;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  background-color: var(--clr-white);
+  color: var(--clr-charcoal-grey);
+  display: block;
+}
+
+.right {
+  max-height: 40%;
+  overflow: hidden;
+  flex-basis: 50%;
+}
+
+.picture {
+  width: 100%;
+}
+
+img {
+  width: 100%;
+}
+
+.left {
+  padding: 1.5em;
+  flex-basis: 50%;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-block: 1rem;
+}
+
+.left > p {
+  margin-block: 1.5em;
+}
+
+li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+li img {
+  width: 1.5em;
+  margin: 1em;
+  margin-left: 0;
+}
+
+li p {
+  font-size: 1em;
+}
+
+.input-holder {
+  width: 100%;
+  padding: 1em;
+  border: 1px solid var(--clr-grey);
+  border-radius: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.invalid {
+  border: 1px solid var(--clr-tomato);
+  background-color: hsla(4, 100%, 67%, 0.15);
+  position: relative;
+}
+
+.invalid::after {
+  position: absolute;
+  top: -45%;
+  right: 7%;
+  content: "Valid email required";
+  color: var(--clr-tomato);
+  font-size: 0.8em;
+  font-weight: 700;
+}
+
+input[type="text"] {
+  width: 100%;
+  outline: none;
+  background: transparent;
+  font-size: 1.05em;
+  border: none;
+  cursor: pointer;
+}
+
+label {
+  font-size: 0.8em;
+  margin-block: 0.5em;
+  font-weight: 700;
+  display: block;
+}
+
+button {
+  width: 100%;
+  background-color: var(--clr-dark-slate-grey);
+  padding: 1.2em;
+  color: var(--clr-white);
+  font-size: 0.95em;
+  font-weight: 700;
+  border-radius: 0.5em;
+  margin-block: 1em;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-image: linear-gradient(
+    to right,
+    hsl(346, 90%, 70%),
+    hsl(4, 100%, 67%)
+  );
+  box-shadow: 5px 5px 20px 2px hsla(4, 100%, 67%, 0.5);
+}
+
+.modal {
+  display: none;
+  width: 100%;
+  height: 100%;
+  padding: 2em;
+  padding-block: 10em;
+  background-color: white;
+  z-index: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.modal > img {
+  width: 4em;
+  margin: 1em;
+}
+
+.modal button {
+  margin-top: 10em;
+  justify-self: flex-end;
+}
+
+.modal em {
+  font-style: normal;
+  font-weight: 700;
+}
+
+@media (min-width: 800px) {
+  body {
+    display: flex;
+    align-items: center;
+  }
+
+  .container {
+    width: min(90%, 900px);
+    height: auto;
+    display: block;
+  }
+
+  main {
+    display: flex;
+    z-index: 1;
+    flex-direction: row-reverse;
+    margin: auto;
+    height: auto;
+    border-radius: 2em;
+    justify-content: center;
+  }
+
+  .right {
+    padding: 1em;
+    display: flex;
+    align-items: center;
+  }
+
+  .left {
+    padding: 4em;
+    padding-right: 2em;
+  }
+
+  h1 {
+    font-size: 3.3em;
+    margin-top: 0.5em;
+  }
+
+  li {
+    letter-spacing: -0.2px;
+  }
+
+  ul img {
+    margin-block: 0.3em;
+  }
+
+  ul {
+    margin-bottom: 2.5em;
+  }
+  #modal {
+    display: none !important;
+  }
+  .modal {
+    display: none;
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    z-index: 2;
+    width: 25em;
+    height: 20em;
+    background-color: white;
+    padding: 2em;
+    border-radius: 1em;
+  }
+
+  .modal img {
+    margin: 0;
+    width: 2.5em;
+  }
+
+  .modal h1 {
+    font-size: 1.9em;
+  }
+
+  .modal button {
+    margin-top: 2em;
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
